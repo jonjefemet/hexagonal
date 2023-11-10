@@ -17,6 +17,11 @@ abstract class ValueObject
         return $this->value;
     }
 
+    public function equals(ValueObject $valueObject): bool
+    {
+        return $this->value === $valueObject->value;
+    }
+
     private function ensureValueIsDefined()
     {
         if (null === $this->value) {
