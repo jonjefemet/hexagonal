@@ -15,7 +15,9 @@ class UuidValueObject extends ValueObject
     private function ensureValueIsUuid(string $value): void
     {
         if (!preg_match('/^[a-f\d]{8}(-[a-f\d]{4}){4}[a-f\d]{8}$/i', $value)) {
-            throw new \InvalidArgumentException('Invalid UUID');
+            throw new \InvalidArgumentException(
+                sprintf('<%s> Invalid UUID <%s>.', static::class, $this->getValue())
+            );
         }
     }
 }

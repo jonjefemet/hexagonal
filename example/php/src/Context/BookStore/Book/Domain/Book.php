@@ -10,10 +10,28 @@ class Book extends AggregateRoot
 
     public BookName $name;
 
-    public function __construct(string $id, string $name)
+    public BookAuthor $author;
+
+    public BookPrice $price;
+
+
+    public function __construct(BookId $id, BookName $name, BookAuthor $author, BookPrice $price)
     {
-        $this->id = new BookId($id);
-        $this->name = new BookName($name);
+        $this->id = $id;
+        $this->name = $name;
+        $this->author = $author;
+        $this->price = $price;
+    }
+
+
+    public static function fromPrimitives(string $id, string $name, string $author, int $price): self
+    {
+        return new self(
+            new BookId($id),
+            new BookName($name),
+            new BookAuthor($author),
+            new BookPrice($price)
+        );
     }
 
     public function toPrimitives(): array
@@ -21,6 +39,8 @@ class Book extends AggregateRoot
         return [
             'id' => $this->id->getValue(),
             'name' => $this->name->getValue(),
+            'author' => $this->author->getValue(),
+            'price' => $this->price->getValue(),
         ];
     }
 } {
