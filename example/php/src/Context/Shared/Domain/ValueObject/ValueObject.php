@@ -4,7 +4,7 @@ namespace MyProject\Context\Shared\Domain\ValueObject;
 
 abstract class ValueObject
 {
-    private $value;
+    protected $value;
 
     public function __construct($value)
     {
@@ -12,12 +12,12 @@ abstract class ValueObject
         $this->ensureValueIsDefined();
     }
 
-    public function getValue()
+    final public function getValue()
     {
         return $this->value;
     }
 
-    public function equals(ValueObject $valueObject): bool
+    final public function equals(ValueObject $valueObject): bool
     {
         return $this->value === $valueObject->value;
     }
