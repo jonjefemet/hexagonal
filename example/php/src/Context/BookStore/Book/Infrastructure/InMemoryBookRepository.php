@@ -39,13 +39,13 @@ class InMemoryBookRepository implements BookRepository
 
     public function searchAll(): array
     {
-        return array_map(function ($book) {
+        return array_values(array_map(function ($book) {
             return Book::fromPrimitives(
                 $book['id'],
                 $book['name'],
                 $book['author'],
                 $book['price']
             );
-        }, $this->books);
+        }, $this->books));
     }
 }

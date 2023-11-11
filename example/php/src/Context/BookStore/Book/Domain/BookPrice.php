@@ -7,7 +7,7 @@ use MyProject\Context\Shared\Domain\ValueObject\NumberValueObject;
 class BookPrice extends NumberValueObject
 {
 
-    public function __construct(int $value)
+    public function __construct(float $value)
     {
         parent::__construct($value);
         $this->ensureIsPositive();
