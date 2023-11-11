@@ -6,13 +6,13 @@ use MyProject\Context\Shared\Domain\AggregateRoot;
 
 class Book extends AggregateRoot
 {
-    public BookId $id;
+    public readonly BookId $id;
 
-    public BookName $name;
+    public readonly BookName $name;
 
-    public BookAuthor $author;
+    public readonly BookAuthor $author;
 
-    public BookPrice $price;
+    public readonly BookPrice $price;
 
 
     public function __construct(BookId $id, BookName $name, BookAuthor $author, BookPrice $price)

@@ -6,14 +6,14 @@ use MyProject\Context\BookStore\Book\Domain\BookRepository;
 
 class BooksFinder
 {
-    public function __construct(private BookRepository $CourseRepository)
+    public function __construct(private readonly BookRepository $bookRepository)
     {
     }
 
     public function find(): BooksResponse
     {
 
-        $books = $this->CourseRepository->searchAll();
+        $books = $this->bookRepository->searchAll();
         return new BooksResponse($books);
     }
 }

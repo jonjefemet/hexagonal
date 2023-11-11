@@ -6,15 +6,10 @@ abstract class ValueObject
 {
     protected $value;
 
-    public function __construct($value)
+    public function __construct(mixed $value)
     {
         $this->value = $value;
         $this->ensureValueIsDefined();
-    }
-
-    final public function getValue()
-    {
-        return $this->value;
     }
 
     final public function equals(ValueObject $valueObject): bool
@@ -28,4 +23,6 @@ abstract class ValueObject
             throw new \InvalidArgumentException(static::class . ' cannot be empty');
         }
     }
+
+    abstract public function getValue();
 }

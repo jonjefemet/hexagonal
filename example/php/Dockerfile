@@ -1,5 +1,5 @@
 # Usar la imagen oficial de PHP CLI desde Docker Hub
-FROM php:8.0-cli
+FROM php:8.1-cli
 
 # Actualizar la lista de paquetes
 RUN apt-get update

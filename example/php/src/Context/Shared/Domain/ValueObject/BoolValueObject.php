@@ -10,4 +10,9 @@ abstract class BoolValueObject extends ValueObject
     {
         parent::__construct($value);
     }
+
+    public function getValue(): bool
+    {
+        return $this->value;
+    }
 }

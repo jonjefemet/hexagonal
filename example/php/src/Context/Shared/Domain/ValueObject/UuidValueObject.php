@@ -2,9 +2,8 @@
 
 namespace MyProject\Context\Shared\Domain\ValueObject;
 
-use MyProject\Context\Shared\Domain\ValueObject\ValueObject;
 
-class UuidValueObject extends ValueObject
+class UuidValueObject extends StringValueObject
 {
     public function __construct(string $value)
     {
@@ -16,7 +15,7 @@ class UuidValueObject extends ValueObject
     {
         if (!preg_match('/^[a-f\d]{8}(-[a-f\d]{4}){4}[a-f\d]{8}$/i', $value)) {
             throw new \InvalidArgumentException(
-                sprintf('<%s> Invalid UUID <%s>.', static::class, $this->getValue())
+                sprintf('<%s> Invalid UUID <%s>.', static::class, $this->value)
             );
         }
     }
