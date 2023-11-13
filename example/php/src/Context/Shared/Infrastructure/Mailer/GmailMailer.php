@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MyProject\Context\Shared\Infrastructure\Mailer;
 
 class GmailMailer implements Mailer

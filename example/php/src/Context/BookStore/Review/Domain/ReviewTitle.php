@@ -6,7 +6,7 @@ namespace MyProject\Context\BookStore\Review\Domain;
 
 use MyProject\Context\Shared\Domain\ValueObject\StringValueObject;
 
-class ReviewComment extends StringValueObject
+class ReviewTitle extends StringValueObject
 {
     public function __construct(string $value)
     {

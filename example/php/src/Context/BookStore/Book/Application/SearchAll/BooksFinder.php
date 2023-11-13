@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MyProject\Context\BookStore\Book\Application\SearchAll;
 
 use MyProject\Context\BookStore\Book\Domain\BookRepository;

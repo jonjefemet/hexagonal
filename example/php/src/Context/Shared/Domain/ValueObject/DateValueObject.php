@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MyProject\Context\Shared\Domain\ValueObject;
 
 use MyProject\Context\Shared\Domain\ValueObject\ValueObject;
